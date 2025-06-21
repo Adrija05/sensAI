@@ -148,8 +148,10 @@ export default function ResumeBuilder({ initialContent }) {
 
   return (
     <div data-color-mode="light" className="space-y-4">
-      <div className="flex flex-col md:flex-row justify-between items-center">
-        <h1 className="font-bold gradient-title text-5xl">Resume Builder</h1>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+        <h1 className="font-bold gradient-title text-5xl md:text-6xl">
+          Resume Builder
+        </h1>
         <div className="space-x-2">
           <Button
             variant="destructive"
@@ -181,28 +183,6 @@ export default function ResumeBuilder({ initialContent }) {
               </>
             )}
           </Button>
-          {activeTab === "preview" && (
-            <Button
-              variant="outline"
-              type="button"
-              className="pt-2"
-              onClick={() =>
-                setResumeMode(resumeMode === "preview" ? "live" : "preview")
-              }
-            >
-              {resumeMode === "preview" ? (
-                <>
-                  <Edit className="h-4 w-4" />
-                  Edit Markdown
-                </>
-              ) : (
-                <>
-                  <Monitor className="h-4 w-4" />
-                  Show Preview
-                </>
-              )}
-            </Button>
-          )}
         </div>
       </div>
 
@@ -382,6 +362,29 @@ export default function ResumeBuilder({ initialContent }) {
         </TabsContent>
 
         <TabsContent value="preview">
+          {activeTab === "preview" && (
+            <Button
+              variant="link"
+              type="button"
+              className="mb-2"
+              onClick={() =>
+                setResumeMode(resumeMode === "preview" ? "edit" : "preview")
+              }
+            >
+              {resumeMode === "preview" ? (
+                <>
+                  <Edit className="h-4 w-4" />
+                  Edit Resume
+                </>
+              ) : (
+                <>
+                  <Monitor className="h-4 w-4" />
+                  Show Preview
+                </>
+              )}
+            </Button>
+          )}
+
           {activeTab === "preview" && resumeMode !== "preview" && (
             <div className="flex p-3 gap-2 items-center border-2 border-yellow-600 text-yellow-600 rounded mb-2">
               <AlertTriangle className="h-5 w-5" />
