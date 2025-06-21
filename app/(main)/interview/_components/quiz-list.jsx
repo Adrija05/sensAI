@@ -29,16 +29,22 @@ export default function QuizList({ assessments }) {
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="gradient-title text-3xl md:text-4xl">
-                Recent Quizzes
-              </CardTitle>
-              <CardDescription>
-                Review your past quiz performance
-              </CardDescription>
+              <CardTitle className="text-3xl md:text-4xl" style={{ color: "#EE82EE" }}>
+  Recent Quizzes
+</CardTitle>
+
+              <CardDescription style={{ color: "#D8BFD8" }}>
+  Review your past quiz performance
+</CardDescription>
+
             </div>
-            <Button onClick={() => router.push("/interview/mock")}>
-              Start New Quiz
-            </Button>
+            <Button
+  onClick={() => router.push("/interview/mock")}
+  style={{ backgroundColor: "#EE82EE", color: "white" }}
+>
+  Start New Quiz
+</Button>
+
           </div>
         </CardHeader>
         <CardContent>

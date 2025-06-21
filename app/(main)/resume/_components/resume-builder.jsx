@@ -149,9 +149,10 @@ export default function ResumeBuilder({ initialContent }) {
   return (
     <div data-color-mode="light" className="space-y-4">
       <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-        <h1 className="font-bold gradient-title text-5xl md:text-6xl">
-          Resume Builder
-        </h1>
+       <h1 className="font-bold text-5xl md:text-6xl" style={{ color: "#EE82EE" }}>
+  Resume Builder
+</h1>
+
         <div className="space-x-2">
           <Button
             variant="destructive"
@@ -170,19 +171,24 @@ export default function ResumeBuilder({ initialContent }) {
               </>
             )}
           </Button>
-          <Button onClick={generatePDF} disabled={isGenerating}>
-            {isGenerating ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                Generating PDF...
-              </>
-            ) : (
-              <>
-                <Download className="h-4 w-4" />
-                Download PDF
-              </>
-            )}
-          </Button>
+          <Button
+  onClick={generatePDF}
+  disabled={isGenerating}
+  style={{ backgroundColor: "#EE82EE", color: "#000" }} // black text for contrast
+>
+  {isGenerating ? (
+    <>
+      <Loader2 className="h-4 w-4 animate-spin" />
+      Generating PDF...
+    </>
+  ) : (
+    <>
+      <Download className="h-4 w-4" />
+      Download PDF
+    </>
+  )}
+</Button>
+
         </div>
       </div>
 

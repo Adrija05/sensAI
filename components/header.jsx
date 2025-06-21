@@ -43,7 +43,7 @@ export default async function Header() {
                 variant="outline"
                 className="hidden md:inline-flex items-center gap-2"
               >
-                <LayoutDashboard className="h-4 w-4" />
+                <LayoutDashboard className="h-4 w-4 " />
                 Industry Insights
               </Button>
               <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
