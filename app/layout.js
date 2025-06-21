@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
       }}
     >
       <html lang="en" suppressHydrationWarning>
-        <head>
+        {/* <head>
           <link rel="icon" href="/logo-sm.png" sizes="any" />
-        </head>
+        </head> */}
         <body className={`${inter.className}`}>
           <ThemeProvider
             attribute="class"
@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
 
             <footer className="bg-muted/50 py-12">
               <div className="container mx-auto px-4 text-center text-gray-200">
+                <p>Made with 💗 by RoadsideCoder</p>
               </div>
             </footer>
           </ThemeProvider>
